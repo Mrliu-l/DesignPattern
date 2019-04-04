@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.MrLiu</groupId>
-  <artifactId>工厂模式</artifactId>
+  <groupId>com.MrLiu.fly</groupId>
+  <artifactId>Factory-Pattern</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>工厂模式</name>
+  <name>Factory-Pattern</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -23,7 +23,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
-      <scope>test</scope>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
