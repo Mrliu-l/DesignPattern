@@ -7,13 +7,20 @@ package com.MrLiu.fly.hungry;
  * @Description: 描述:单例—饿汉模式； 缺点：不管是否用到，都会在系统启动时实例化一个对象。
  */
 public class HungrySingleton {
+
     //静态字段会在类加载时进行实例化
     private static final HungrySingleton hungrySingleton = new HungrySingleton();
 
     //私有化构造方法
-    private HungrySingleton(){};
+    private HungrySingleton(){
+        System.out.println("初始化对象");
+    };
 
     public static HungrySingleton getInstance(){
         return hungrySingleton;
+    }
+
+    public static void otherStaticMethod() {
+        System.out.println("aa");
     }
 }
