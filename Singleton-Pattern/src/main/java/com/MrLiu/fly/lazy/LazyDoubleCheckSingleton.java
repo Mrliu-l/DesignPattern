@@ -8,6 +8,7 @@ package com.MrLiu.fly.lazy;
  */
 public class LazyDoubleCheckSingleton {
 
+    //使用volatile关键字保证了多喝CPU下数据的一致性
     private volatile static LazyDoubleCheckSingleton singleton = null;
 
     private LazyDoubleCheckSingleton(){};
