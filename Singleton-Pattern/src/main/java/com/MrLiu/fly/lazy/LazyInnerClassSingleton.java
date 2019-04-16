@@ -30,8 +30,7 @@ public class LazyInnerClassSingleton {
     }
 
     //防止反序列化创建单例
-    //通过fileoutStream序列化时，会先创建实例，然后通过此方法判断返回的具体实例，故在此重写此方法即可
-    //本人观点：重写此方法只能保证这种序列化不会创建新的实例，对于其他序列化工具需要再研究
+    //通过序列化时，会先创建实例，然后通过此方法判断返回的具体实例，故在此重写此方法即可
     private Object readResolve(){
         return lazyHolder.instance;
     }
