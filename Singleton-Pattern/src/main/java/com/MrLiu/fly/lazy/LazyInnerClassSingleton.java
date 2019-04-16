@@ -9,6 +9,10 @@ package com.MrLiu.fly.lazy;
 public class LazyInnerClassSingleton {
 
     private LazyInnerClassSingleton(){
+        //防止利用反射创建对象
+        if(lazyHolder.instance != null){
+            throw new RuntimeException("不允许构建多个实例");
+        }
         System.out.println("本类初始化");
     }
 
@@ -23,6 +27,13 @@ public class LazyInnerClassSingleton {
 
     public static void otherStaticMethod() {
         System.out.println("aa");
+    }
+
+    //防止反序列化创建单例
+    //通过fileoutStream序列化时，会先创建实例，然后通过此方法判断返回的具体实例，故在此重写此方法即可
+    //本人观点：重写此方法只能保证这种序列化不会创建新的实例，对于其他序列化工具需要再研究
+    private Object readResolve(){
+        return lazyHolder.instance;
     }
 
 }
