@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author liu_l
  * @email: liu_lei_programmer@163.com
  * @time 2019/4/4 11:27
- * @Description: 描述:测试
+ * @Description: 描述:测试类
  */
 public class FactoryTest {
 
