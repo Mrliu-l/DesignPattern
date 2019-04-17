@@ -17,14 +17,16 @@
 >>      缺点：由于是静态字段或静态代码块实现，故只要调用该类中的任意静态方法，会实例化多有的静态属性。故如果没有用到该对象也会实例化
 >   2、懒汉模式_lazy.LazySingleton
 >>      缺点：多线程下仍会创建多个实例
->   3、懒汉模式_lazy.LazyDoubleCheckSingleton（双重锁）
+>   3、懒汉模式_lazy.LazyDoubleCheckSingleton（双重锁）——常用
 >>      优点：保证了一定是单例
 >>      缺点: 但由于使用到synchronize锁机制，故会影响效率
 >>      注意：1、使用线程断点进行验证多线程下是否创建多个对象；
 >>            2、使用volatile关键字是因为CPU在执行指令时会出现字节码重组与多核CPU间数据一致性问题，故需要使用该字段
->   4、懒汉模式_lazy.LazyInnerClassSingleton（静态内部类实现）
+>   4、懒汉模式_lazy.LazyInnerClassSingleton（静态内部类实现）——常用
 >>      优点：无锁、效率高；避免了饿汉模式中的弊端，只有在调用时才会产生该单例对象
 >>      注意：需要理解的时静态内部类的加载机制
+>   其中以上几种：利用序列化（通过重写readResolve方法）与反射（通过构造方法中判断）可以破坏单例模式;解决方案可参照LazyInnerClassSingleton中解释
+>   5、注册式单例—spring工厂模式
         
         
     
